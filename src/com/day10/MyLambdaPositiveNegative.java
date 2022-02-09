@@ -1,7 +1,7 @@
 package com.day10;
 
 import java.util.*;
-interface PositiveNegative{  
+interface Positive{  
     public void total();  
 }  
   
@@ -12,16 +12,20 @@ public class MyLambdaPositiveNegative {
         int a=s.nextInt();
         int positive;
         
-        PositiveNegative d2=()->{  
-        	if(a%2==0)
+        Positive d2=()->{  
+        	if(a>0)
             {
-            	System.out.println("Even");
+            	System.out.println("Positive");
+            }
+            else if (a==0)
+            {
+            	System.out.println("Zero");
             }
             else
             {
-            	System.out.println("Odd");
+            	System.out.println("Negative");
             }
-			System.out.println("Even number: "+ (a %2==0));  
+			System.out.println("Number is positive/equal to zero: "+ (a>=0));  
         };  
         d2.total();  
     }  
